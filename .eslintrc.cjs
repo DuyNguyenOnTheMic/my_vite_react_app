@@ -1,11 +1,6 @@
 module.exports = {
   env: { browser: true, es2024: true, node: true },
-  extends: [
-    'next/core-web-vitals',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:storybook/recommended',
-    'prettier'
-  ],
+  extends: ['plugin:@typescript-eslint/recommended', 'prettier'],
   rules: {
     'react/display-name': 'off',
     '@next/next/no-img-element': 'off',
@@ -15,6 +10,7 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
+
     // add new line above comment
     'lines-around-comment': [
       'error',
@@ -27,8 +23,10 @@ module.exports = {
         allowArrayStart: true
       }
     ],
+
     // add new line above return
     'newline-before-return': 'error',
+
     // add new line below import
     'import/newline-after-import': [
       'error',
