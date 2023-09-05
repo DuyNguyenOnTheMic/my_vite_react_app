@@ -1,3 +1,6 @@
+import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
 import colorSharp from '../assets/img/color-sharp.png'
@@ -28,9 +31,9 @@ const responsive = {
 const Skills = () => {
   return (
     <section className='skill' id='skills'>
-      <div className='container'>
-        <div className='row'>
-          <div className='col-12'>
+      <Container>
+        <Row>
+          <Col>
             <div className='skill-bx wow zoomIn'>
               <h2>Skills</h2>
               <p>
@@ -56,9 +59,9 @@ const Skills = () => {
                 </div>
               </Carousel>
             </div>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
       <img className='background-image-left' src={colorSharp} alt='Image' />
     </section>
   )
