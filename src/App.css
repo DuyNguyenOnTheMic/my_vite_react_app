@@ -15,7 +15,7 @@
   font-weight: 400;
 }
 
-/************ Default CSS ************/
+/************ Default Css ************/
 * {
   margin: 0;
   padding: 0;
@@ -268,6 +268,7 @@ nav.navbar .navbar-toggler[aria-expanded='true'] .navbar-toggler-icon {
   line-height: 1;
   margin-bottom: 20px;
   display: block;
+  text-align: center;
 }
 .banner p {
   color: #b8b8b8;
