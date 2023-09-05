@@ -3,7 +3,7 @@ import { ArrowRightCircle } from 'react-bootstrap-icons'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
-import HeaderImg from '../assets/img/header-img.svg'
+import headerImg from '../assets/img/header-img.svg'
 
 const Banner = () => {
   const [loopNum, setLoopNum] = useState(0)
@@ -63,7 +63,7 @@ const Banner = () => {
             </button>
           </Col>
           <Col xs={12} md={6} xl={5}>
-            <img src={HeaderImg} alt='Header Image' />
+            <img src={headerImg} alt='Header Image' />
           </Col>
         </Row>
       </Container>
