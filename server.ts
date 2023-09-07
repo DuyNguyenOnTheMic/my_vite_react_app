@@ -1,6 +1,6 @@
-const express = require('express')
-const cors = require('cors')
-const nodemailer = require('nodemailer')
+import cors from 'cors'
+import express from 'express'
+import nodemailer from 'nodemailer'
 
 const router = express.Router()
 

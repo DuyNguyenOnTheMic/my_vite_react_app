@@ -6,30 +6,46 @@ import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import contactImg from '../assets/img/contact-img.svg'
 
-type statusType = {
-  message: string
+type ResponseStatusType = {
   success: boolean
+  message: string
+}
+
+const initialState = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: '',
+  message: ''
 }
 
 const Contact = () => {
-  const [formDetails, setFormDetails] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    message: ''
-  })
+  const [formDetails, setFormDetails] = useState(initialState)
   const [buttonText, setButtonText] = useState('Send')
-  const [status, setStatus] = useState<statusType>({ message: '', success: false })
+  const [status, setStatus] = useState<ResponseStatusType>({ message: '', success: false })
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target
     setFormDetails(preState => ({ ...preState, [name]: value }))
   }
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-
-    return
+    setButtonText('Sending...')
+    const response = await fetch('http://localhost:3000/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'Application/json;charset=utf-8'
+      },
+      body: JSON.stringify(formDetails)
+    })
+    setButtonText('Send')
+    const result = await response.json()
+    setFormDetails(initialState)
+    if (result.code === 200) {
+      setStatus({ success: true, message: 'Message send successfully! 😊' })
+    } else {
+      setStatus({ success: false, message: 'Something went wrong, please try again later! 😥' })
+    }
   }
 
   return (
