@@ -43,12 +43,12 @@ const Newsletter = ({ onValidated, status, message }: NewsletterType) => {
           <Col md={6} xl={7}>
             <Form onSubmit={handleSubmit}>
               <div className='new-email-bx'>
-                <Form.Control
+                <input
                   type='email'
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   placeholder='Email Address'
-                ></Form.Control>
+                />
                 <Button type='submit'>Submit</Button>
               </div>
             </Form>
