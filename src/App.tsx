@@ -1,3 +1,4 @@
+import 'animate.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Fragment } from 'react'
 import './App.css'

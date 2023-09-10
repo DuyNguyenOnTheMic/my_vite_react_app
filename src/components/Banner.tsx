@@ -3,6 +3,7 @@ import { ArrowRightCircle } from 'react-bootstrap-icons'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
+import TrackVisibility from 'react-on-screen'
 import headerImg from '../assets/img/header-img.svg'
 
 const Banner = () => {
@@ -49,18 +50,24 @@ const Banner = () => {
       <Container>
         <Row className='align-items-center'>
           <Col xs={12} md={6} xl={7}>
-            <span className='tagline'>Welcome to my Portfolio</span>
-            <h1>
-              Hi I'm Webdecoded <br /> <span className='wrap'>{text}</span>
-            </h1>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book
-            </p>
-            <button onClick={() => console.log('connect')}>
-              Let's Connect <ArrowRightCircle />
-            </button>
+            <TrackVisibility>
+              {({ isVisible }) => (
+                <div className={isVisible ? 'animate__animated animate__fadeIn' : ''}>
+                  <span className='tagline'>Welcome to my Portfolio</span>
+                  <h1>
+                    Hi I'm Duy Nguyen <br /> <span className='wrap'>{text}</span>
+                  </h1>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book
+                  </p>
+                  <button onClick={() => console.log('connect')}>
+                    Let's Connect <ArrowRightCircle />
+                  </button>
+                </div>
+              )}
+            </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
             <img src={headerImg} alt='Header Image' />
